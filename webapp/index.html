@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Добро пожаловать в наш магазин!</h1>
+    <button id="buyBtn">Купить</button>
+
+    <script>
+        // Проверка, доступен ли Telegram WebApp
+        if (window.Telegram) {
+            window.Telegram.WebApp.init();
+        }
+
+        // Слушатель для кнопки "Купить"
+        document.getElementById('buyBtn').addEventListener('click', function() {
+            window.Telegram.WebApp.sendData('buy_product');
+        });
+    </script>
+</body>
+</html>
